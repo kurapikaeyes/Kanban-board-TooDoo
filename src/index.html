@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TooDoo</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-left">
+            <h1>TooDoo</h1>
+        </div>
+    </header>
+    <div class="board">
+        <form id="task-form">
+            <input type="text" id="task-input" placeholder="Aggiungi un'attività..." required>
+            <button type="submit">Aggiungi</button>
+        </form>
+
+        <div class="colonne">
+            <div class="colonna" id="da-fare">
+                <h3 class="heading">Da Fare</h3>
+
+                <p class="task" draggable="true">Esempio 1</p>
+                <p class="task" draggable="true">Esempio 2</p>
+            </div>
+            <div class="colonna" id="in-corso">
+                <h3 class="heading">In Corso</h3>
+
+                <p class="task" draggable="true">Esempio 3</p>
+                <p class="task" draggable="true">Esempio 4</p>
+            </div>
+            <div class="colonna" id="fatto">
+                <h3 class="heading">Fatto</h3>
+
+                <p class="task" draggable="true">Esempio 5</p>
+                <p class="task" draggable="true">Esempio 6</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
