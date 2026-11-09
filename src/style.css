@@ -32,6 +32,7 @@ header h1 {
 }
 
 .board {
+    align-items: center;
     padding: 20px 24px;
     flex: 1;
     display: flex;
@@ -43,6 +44,7 @@ header h1 {
     display: flex;
     gap: 10px;
     max-width: 480px;
+    width: 100%;
 }
 
 #task-input {
@@ -83,11 +85,14 @@ header h1 {
     overflow-x: auto;
     padding-bottom: 16px;
     flex: 1;
+    justify-content: center;
+    width: 100%;
+    max-width: 1000px;
 }
 
 .colonna {
     background-color: #f8fafc;
-    border: 1px solid #d1d5db;
+    border: 1px solid #b2b5b9;
     border-radius: 4px;
     min-width: 280px;
     max-width: 320px;
@@ -100,8 +105,8 @@ header h1 {
 }
 
 .heading {
-    background-color: #e2e8f0;
-    color: #292929;
+    background-color: #d4d8dd;
+    color: #000000;
     font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
