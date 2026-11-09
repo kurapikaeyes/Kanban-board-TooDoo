@@ -1,0 +1,156 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+}
+
+body {
+    background-color: #eef0f3;
+    color: #1f2226;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+    font-family: 'BBH Bartle', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.board {
+    padding: 20px 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#task-form {
+    display: flex;
+    gap: 10px;
+    max-width: 480px;
+}
+
+#task-input {
+    flex: 1;
+    padding: 9px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    background-color: #ffffff;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+#task-input:focus {
+    border-color: #324461;
+}
+
+#task-form button {
+    padding: 9px 18px;
+    background-color: #2f2f2f;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#task-form button:hover {
+    background-color: #4d4d4d;
+}
+
+.colonne {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    overflow-x: auto;
+    padding-bottom: 16px;
+    flex: 1;
+}
+
+.colonna {
+    background-color: #f8fafc;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    min-width: 280px;
+    max-width: 320px;
+    flex: 1;
+    min-height: 520px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+.heading {
+    background-color: #e2e8f0;
+    color: #292929;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 8px 12px;
+    margin: -10px -10px 4px -10px;
+    border-bottom: 1px solid #cbd5e1;
+    border-radius: 3px 3px 0 0;
+    text-align: center;
+}
+
+.task {
+    background-color: #f29191;
+    color: #21212b;
+    padding: 12px;
+    border-radius: 3px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.4;
+    min-height: 75px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16);
+    border-bottom: 4px solid rgba(0, 0, 0, 0.15);
+    cursor: grab;
+}
+
+.task:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.18);
+}
+
+.task:active {
+    cursor: grabbing;
+}
+
+#da-fare .task {
+    background-color: #f29191;
+    color: #000000;
+}
+
+#in-corso .task {
+    background-color: #f1a13f;
+    color: #000000;
+}
+
+#fatto .task {
+    background-color: #4ac177;
+    color: #ffffff;
+}
+
+.is-dragging {
+    opacity: 0;
+}
