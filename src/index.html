@@ -18,7 +18,8 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="modalAddTask.css">
+    <script src="aggiungereTask.js" defer></script>
     <script src="dragDrop.js" defer></script>
 </head>
 
@@ -29,10 +30,41 @@
         </div>
     </header>
     <div class="board">
-        <form id="task-form">
-            <input type="text" id="task-input" placeholder="Aggiungi un'attività..." required>
-            <button type="submit">Aggiungi</button>
-        </form>
+        <div class="board-controls">
+            <button id="open-modal-btn" class="add-task-btn">+ Aggiungi attività</button>
+            <div class="total-counter">Totale attività: <span id="total-tasks-count">0</span></div>
+        </div>
+
+        <div id="task-modal" class="modal">
+            <div class="modal-content">
+                <h2>Nuova attività</h2>
+                <form id="task-form">
+                    <div class="form-group">
+                        <label for="modal-title">Titolo</label>
+                        <input type="text" id="modal-title" required placeholder="Titolo dell'attività...">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="modal-desc">Descrizione</label>
+                        <textarea id="modal-desc" placeholder="Descrivi i dettagli..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="modal-column">Colonna</label>
+                        <select id="modal-column">
+                            <option value="da-fare">Da Fare</option>
+                            <option value="in-corso">In Corso</option>
+                            <option value="fatto">Fatto</option>
+                        </select>
+                    </div>
+
+                    <div class="modal-actions">
+                        <button type="button" id="close-modal-btn" class="btn-secondary">Annulla</button>
+                        <button type="submit" class="btn-primary">Aggiungi</button>
+                    </div>
+                </form>
+            </div>
+        </div>
 
         <div class="colonne">
             <div class="colonna" id="da-fare">

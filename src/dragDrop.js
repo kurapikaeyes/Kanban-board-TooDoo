@@ -14,7 +14,6 @@ droppables.forEach((zone) => {
     zone.addEventListener("dragover", (e) => {
         e.preventDefault();
 
-        //trova task più vicino al cursore
         const bottomTask = insertAboveTask(zone, e.clientY);
         const currentTask = document.querySelector('.is-dragging');
 
@@ -41,3 +40,31 @@ const insertAboveTask = (zone, mouseY) => {
     });
     return closestTask;
 };
+
+function updateCounters() {
+    const columns = document.querySelectorAll('.colonna');
+    let totalTasks = 0;
+
+    columns.forEach((col) => {
+        const heading = col.querySelector('.heading');
+        const tasksCount = col.querySelectorAll('.task').length;
+        totalTasks += tasksCount;
+
+        if (!heading.dataset.baseTitle) {
+            heading.dataset.baseTitle = heading.textContent.trim();
+        }
+
+        heading.textContent = `${heading.dataset.baseTitle} (${tasksCount})`;
+    });
+
+    const totalEl = document.getElementById('total-tasks-count');
+    if (totalEl) {
+        totalEl.textContent = totalTasks;
+    }
+}
+
+updateCounters();
+
+draggables.forEach((task) => {
+    task.addEventListener('dragend', updateCounters);
+});

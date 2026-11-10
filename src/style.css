@@ -40,30 +40,31 @@ header h1 {
     gap: 20px;
 }
 
-#task-form {
+.board-controls {
+    position: relative;
     display: flex;
-    gap: 10px;
-    max-width: 480px;
+    justify-content: center;
+    align-items: center;
     width: 100%;
+    max-width: 1000px;
+    margin-bottom: 4px;
 }
 
-#task-input {
-    flex: 1;
-    padding: 9px 14px;
-    border: 1px solid #cbd5e1;
-    border-radius: 4px;
-    font-size: 0.95rem;
-    background-color: #ffffff;
-    outline: none;
-    transition: border-color 0.2s;
+.total-counter {
+    position: absolute;
+    right: 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #475569;
 }
 
-#task-input:focus {
-    border-color: #324461;
+#total-tasks-count {
+    font-weight: 700;
+    color: #0f172a;
 }
 
-#task-form button {
-    padding: 9px 18px;
+.add-task-btn {
+    padding: 10px 18px;
     background-color: #2f2f2f;
     color: #ffffff;
     border: none;
@@ -74,7 +75,7 @@ header h1 {
     transition: background-color 0.2s;
 }
 
-#task-form button:hover {
+.add-task-btn:hover {
     background-color: #4d4d4d;
 }
 
@@ -126,7 +127,10 @@ header h1 {
     font-size: 0.9rem;
     font-weight: 500;
     line-height: 1.4;
-    min-height: 75px;
+
+    max-height: 150px;
+    overflow-y: auto;
+
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16);
     border-bottom: 4px solid rgba(0, 0, 0, 0.15);
     cursor: grab;
@@ -141,19 +145,60 @@ header h1 {
     cursor: grabbing;
 }
 
+.task p {
+    margin-top: 4px;
+    font-size: 0.85rem;
+    opacity: 0.9;
+    white-space: pre-line;
+    word-break: break-word;
+}
+
 #da-fare .task {
     background-color: #f29191;
     color: #000000;
+    scrollbar-width: thin;
+    scrollbar-color: #c86d6d transparent;
+}
+
+#da-fare .task::-webkit-scrollbar {
+    width: 6px;
+}
+
+#da-fare .task::-webkit-scrollbar-thumb {
+    background-color: #c86d6d;
+    border-radius: 3px;
 }
 
 #in-corso .task {
     background-color: #f1a13f;
     color: #000000;
+    scrollbar-width: thin;
+    scrollbar-color: #c98026 transparent;
+}
+
+#in-corso .task::-webkit-scrollbar {
+    width: 6px;
+}
+
+#in-corso .task::-webkit-scrollbar-thumb {
+    background-color: #c98026;
+    border-radius: 3px;
 }
 
 #fatto .task {
     background-color: #4ac177;
     color: #ffffff;
+    scrollbar-width: thin;
+    scrollbar-color: #369a5c transparent;
+}
+
+#fatto .task::-webkit-scrollbar {
+    width: 6px;
+}
+
+#fatto .task::-webkit-scrollbar-thumb {
+    background-color: #369a5c;
+    border-radius: 3px;
 }
 
 .is-dragging {
