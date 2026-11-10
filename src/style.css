@@ -157,5 +157,6 @@ header h1 {
 }
 
 .is-dragging {
-    opacity: 0;
+    opacity: 0.4;
+    filter: brightness(1.1);
 }
