@@ -12,15 +12,14 @@
     <link href="https://fonts.googleapis.com/css2?family=BBH+Bartle&display=swap" rel="stylesheet">
 
     <!-- Font per altro testo -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="modalAddTask.css">
-    <script src="aggiungereTask.js" defer></script>
+
     <script src="dragDrop.js" defer></script>
+    <script type="module" src="script.js"></script>
 </head>
 
 <body>
@@ -28,10 +27,14 @@
         <div class="header-left">
             <h1>TooDoo</h1>
         </div>
+        <div class="header-right">
+            <span class="header-author">Derkach Oleksandr 5AI</span>
+        </div>
     </header>
     <div class="board">
         <div class="board-controls">
-            <button id="open-modal-btn" class="add-task-btn">+ Aggiungi attività</button>
+            <button id="clear-board-btn" class="clear-board-btn">Eliminare tutto</button>
+            <button id="open-modal-btn" class="add-task-btn">+ Aggiungere attività</button>
             <div class="total-counter">Totale attività: <span id="total-tasks-count">0</span></div>
         </div>
 
@@ -69,21 +72,12 @@
         <div class="colonne">
             <div class="colonna" id="da-fare">
                 <h3 class="heading">Da Fare</h3>
-
-                <p class="task" draggable="true">Esempio 1</p>
-                <p class="task" draggable="true">Esempio 2</p>
             </div>
             <div class="colonna" id="in-corso">
                 <h3 class="heading">In Corso</h3>
-
-                <p class="task" draggable="true">Esempio 3</p>
-                <p class="task" draggable="true">Esempio 4</p>
             </div>
             <div class="colonna" id="fatto">
                 <h3 class="heading">Fatto</h3>
-
-                <p class="task" draggable="true">Esempio 5</p>
-                <p class="task" draggable="true">Esempio 6</p>
             </div>
         </div>
     </div>

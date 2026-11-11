@@ -17,6 +17,8 @@ droppables.forEach((zone) => {
         const bottomTask = insertAboveTask(zone, e.clientY);
         const currentTask = document.querySelector('.is-dragging');
 
+        if (!currentTask) return;
+
         if (!bottomTask) {
             zone.appendChild(currentTask);
         } else {
