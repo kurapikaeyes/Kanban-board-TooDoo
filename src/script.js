@@ -84,6 +84,20 @@ function createTaskElement(title, desc) {
         newTask.appendChild(p);
     }
 
+    const deleteBtn = document.createElement('button');
+    deleteBtn.classList.add('delete-task-btn');
+    deleteBtn.setAttribute('title', 'Elimina attività');
+    deleteBtn.textContent = '×';
+
+    deleteBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        newTask.remove();
+        safeUpdateCounters();
+        saveTasksToStorage();
+    });
+
+    newTask.appendChild(deleteBtn);
+
     newTask.addEventListener('dragstart', () => {
         newTask.classList.add('is-dragging');
     });
